@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Fragment } from "react"
 
 import { CardDetailsProps } from "@/types"
+import { generateCarImageUrl } from "@/utils"
 
 const CarDetails = ({
    car,
@@ -63,7 +64,7 @@ const CarDetails = ({
                         <div className="flex flex-1 flex-col gap-3">
                            <div className="relative h-40 w-full bg-pattern bg-center bg-cover rounded-lg">
                               <Image
-                                 src="/hero.png"
+                                 src={generateCarImageUrl(car)}
                                  alt="car model"
                                  fill
                                  priority
@@ -74,7 +75,7 @@ const CarDetails = ({
                            <div className="flex gap-3">
                               <div className="relative flex-1 h-24 w-full bg-primary-blue-100 rounded-lg">
                                  <Image
-                                    src="/hero.png"
+                                    src={generateCarImageUrl(car, "29")}
                                     alt="car model"
                                     fill
                                     priority
@@ -83,7 +84,7 @@ const CarDetails = ({
                               </div>
                               <div className="relative flex-1 h-24 w-full bg-primary-blue-100 rounded-lg">
                                  <Image
-                                    src="/hero.png"
+                                    src={generateCarImageUrl(car, "33")}
                                     alt="car model"
                                     fill
                                     priority
@@ -92,7 +93,7 @@ const CarDetails = ({
                               </div>
                               <div className="relative flex-1 h-24 w-full bg-primary-blue-100 rounded-lg">
                                  <Image
-                                    src="/hero.png"
+                                    src={generateCarImageUrl(car, "13")}
                                     alt="car model"
                                     fill
                                     priority
