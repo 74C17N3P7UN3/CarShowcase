@@ -1,5 +1,7 @@
-const CustomFilter = () => (
-   <div>CustomFilter</div>
+const CustomFilter = ({
+   title
+}: { title: string }) => (
+   <div>{title}</div>
 )
 
 export default CustomFilter

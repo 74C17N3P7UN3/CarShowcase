@@ -15,6 +15,20 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
    return rentalRatePerDay.toFixed(0)
 }
 
+export const fetchCars = async () => {
+   const options = {
+      method: "GET",
+      headers: {
+         "X-RapidAPI-Key": "cfc6452e34mshb0e8f229d248693p11b5ebjsnac43cb5711e0",
+         "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com"
+      }
+   }
+
+   const response = await fetch(`https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=golf`, options)
+
+   return await response.json()
+}
+
 export const generateCarImageUrl = (car: CarProps, angle?: string) => {
    const url = new URL("https://cdn.imagin.studio/get-image")
 
