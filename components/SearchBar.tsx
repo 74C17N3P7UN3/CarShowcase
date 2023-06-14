@@ -32,7 +32,7 @@ const SearchBar = () => {
    const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
 
-      if (manufacturer === "" || model === "")
+      if (manufacturer === "" && model === "")
          return alert("Please select a manufacturer and a model.")
 
       updateSearchParams(manufacturer.toLowerCase(), model.toLowerCase())

@@ -35,6 +35,14 @@ export interface CustomButtonProps {
    isDisabled?: boolean
 }
 
+export interface FilterProps {
+   limit: number
+   manufacturer: string
+   model: string
+   fuel: string
+   year: number
+}
+
 export interface SearchManufacturerProps {
    manufacturer: string
    setManufacturer: (manufacturer: string) => void
