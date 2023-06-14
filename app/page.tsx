@@ -1,17 +1,14 @@
-import { useSearchParams } from "next/navigation"
-
 import { CarCard, CustomFilter, Hero, SearchBar } from "@/components"
+import { FilterProps } from "@/types"
 import { fetchCars } from "@/utils"
 
-const Home = async () => {
-   const searchParams = useSearchParams()
-
+const Home = async ({ searchParams }: { searchParams: FilterProps }) => {
    const allCars = await fetchCars({
-      limit: parseInt(searchParams.get('limit') || "12"),
-      manufacturer: searchParams.get('manufacturer') || "",
-      model: searchParams.get('model') || "",
-      fuel: searchParams.get('fuel') || "",
-      year: parseInt(searchParams.get('year') || "2023"),
+      limit: searchParams.limit || 12,
+      manufacturer: searchParams.manufacturer || "",
+      model: searchParams.model || "",
+      fuel: searchParams.fuel || "",
+      year: searchParams.year || 2023,
    })
 
    const isDataEmpty =
