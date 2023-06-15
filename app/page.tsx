@@ -32,8 +32,8 @@ const Home = async ({ searchParams }: { searchParams: FilterProps }) => {
                <SearchBar />
 
                <div className="home__filter-container">
-                  <CustomFilter title="Fuel" options={fuels} />
-                  <CustomFilter title="Year" options={yearsOfProduction} />
+                  <CustomFilter title="fuel" options={fuels} />
+                  <CustomFilter title="year" options={yearsOfProduction} />
                </div>
             </div>
 
