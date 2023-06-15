@@ -1,11 +1,17 @@
-import { CarCard, CustomFilter, Hero, SearchBar } from "@/components"
+import {
+   CarCard,
+   CustomFilter,
+   Hero,
+   SearchBar,
+   ShowMore
+} from "@/components"
 import { fuels, yearsOfProduction } from "@/constants"
 import { FilterProps } from "@/types"
 import { fetchCars } from "@/utils"
 
 const Home = async ({ searchParams }: { searchParams: FilterProps }) => {
    const allCars = await fetchCars({
-      limit: searchParams.limit || 12,
+      limit: searchParams.limit || 8,
       manufacturer: searchParams.manufacturer || "",
       model: searchParams.model || "",
       fuel: searchParams.fuel || "",
@@ -42,6 +48,11 @@ const Home = async ({ searchParams }: { searchParams: FilterProps }) => {
                   <div className="home__cars-wrapper">
                      {allCars?.map((car) => <CarCard car={car} />)}
                   </div>
+
+                  <ShowMore
+                     pageNumber={(searchParams.limit || 8) / 8}
+                     outOfCars={(searchParams.limit || 8) > allCars.length}
+                  />
                </section>
             ) : (
                <div className="home__error-container">
