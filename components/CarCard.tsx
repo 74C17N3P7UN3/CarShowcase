@@ -5,12 +5,12 @@ import { useState } from "react"
 
 import { CarDetails, CustomButton } from "."
 
-import { CarCardProps } from "@/types"
+import { CarProps } from "@/types"
 import { calculateCarRent, generateCarImageUrl } from "@/utils"
 
 const CarCard = ({
    car
-}: CarCardProps) => {
+}: { car: CarProps }) => {
    const [isOpen, setIsOpen] = useState(false)
 
    const { city_mpg, drive, make, model, transmission, year } = car

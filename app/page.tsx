@@ -1,4 +1,5 @@
 import { CarCard, CustomFilter, Hero, SearchBar } from "@/components"
+import { fuels, yearsOfProduction } from "@/constants"
 import { FilterProps } from "@/types"
 import { fetchCars } from "@/utils"
 
@@ -31,8 +32,8 @@ const Home = async ({ searchParams }: { searchParams: FilterProps }) => {
                <SearchBar />
 
                <div className="home__filter-container">
-                  <CustomFilter title="Fuel" />
-                  <CustomFilter title="Year" />
+                  <CustomFilter title="Fuel" options={fuels} />
+                  <CustomFilter title="Year" options={yearsOfProduction} />
                </div>
             </div>
 

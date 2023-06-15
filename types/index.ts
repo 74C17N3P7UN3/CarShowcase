@@ -1,9 +1,5 @@
 import { MouseEventHandler } from "react"
 
-export interface CarCardProps {
-   car: CarProps
-}
-
 export interface CardDetailsProps {
    car: CarProps
    isOpen: boolean
@@ -35,12 +31,22 @@ export interface CustomButtonProps {
    isDisabled?: boolean
 }
 
+export interface CustomFilterProps {
+   title: string
+   options: OptionProps[]
+}
+
 export interface FilterProps {
    limit: number
    manufacturer: string
    model: string
    fuel: string
    year: number
+}
+
+export interface OptionProps {
+   title: string
+   value: string
 }
 
 export interface SearchManufacturerProps {
