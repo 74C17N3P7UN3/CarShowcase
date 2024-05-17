@@ -46,7 +46,7 @@ const Home = async ({ searchParams }: { searchParams: FilterProps }) => {
             {!isDataEmpty ? (
                <section>
                   <div className="home__cars-wrapper">
-                     {allCars?.map((car) => <CarCard car={car} />)}
+                     {allCars?.map((car, idx) => <CarCard car={car} key={idx} />)}
                   </div>
 
                   <ShowMore
